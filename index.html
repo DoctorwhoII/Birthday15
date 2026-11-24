@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Meri Jaan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Special+Elite&display=swap" rel="stylesheet">
+</head>
+<body class="light-theme">
+
+    <!-- Background Bouquets -->
+    <div class="bg-decoration bg-dec-1" style="background-image: url('bouquet-fatima-square.png');"></div>
+    <div class="bg-decoration bg-dec-2" style="background-image: url('bouquet-fatima-square.png');"></div>
+    <div class="bg-decoration bg-dec-3" style="background-image: url('bouquet-fatima-square.png');"></div>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader-content">
+            <div class="bouncing-basketball">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png" alt="Basketball" class="basketball-img-real">
+                <div class="basketball-shadow"></div>
+            </div>
+            <h2>Happy Birthday</h2>
+            <p>Entering the court...</p>
+        </div>
+    </div>
+
+    <!-- Top Bar Controls -->
+    <header class="top-controls">
+        <div class="audio-control" id="audio-toggle" title="Toggle Background Music">
+            <span class="audio-icon">🎵</span>
+            <span class="audio-status">Music Playing</span>
+        </div>
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark Mode">
+            <span class="theme-icon">🌙</span>
+        </button>
+    </header>
+
+    <!-- Hidden Audio Elements -->
+    <audio id="bg-music" src="You're My Compass.wav" loop preload="auto"></audio>
+
+    <!-- Main App Container -->
+    <main id="app-container">
+
+        <!-- ================= HOMEPAGE ================= -->
+        <section id="section-home" class="page-section active">
+            <div class="hero-content">
+                <!-- Top Progressive Navigation Bar -->
+                <nav class="top-nav-bar glass-card" id="top-nav-bar">
+                    <button class="nav-pill active-pill" data-target="memories" id="btn-memories">
+                        <span>🖼️</span> Pictorial Memories
+                    </button>
+                    <button class="nav-pill locked" data-target="music" id="btn-music" disabled>
+                        <span>🎧</span> La Musique
+                    </button>
+                    <button class="nav-pill locked" data-target="letter" id="btn-letter" disabled>
+                        <span>💌</span> Letter
+                    </button>
+                    <button class="nav-pill locked" data-target="reveal" id="btn-reveal" disabled>
+                        <span>✨</span> Reveal
+                    </button>
+                    <button class="nav-pill locked final-pill" data-target="final" id="btn-final" disabled>
+                        <span>❤️</span> ____
+                    </button>
+                </nav>
+
+                <div class="hero-title-area">
+                    <h1 class="hero-title">Happy Birthday, Meri Jaan</h1>
+                    <p class="hero-subtitle">For my sole obsession 😝❤️. Forever my compass.</p>
+                </div>
+
+                <!-- Anniversary Counter -->
+                <div class="counter-card glass-card">
+                    <h3>Time We've Been Together</h3>
+                    <div id="anniversary-counter" class="counter-grid">
+                        <div class="time-block">
+                            <span id="counter-days" class="time-val">00</span>
+                            <span class="time-label">Days</span>
+                        </div>
+                        <div class="time-sep">:</div>
+                        <div class="time-block">
+                            <span id="counter-hours" class="time-val">00</span>
+                            <span class="time-label">Hours</span>
+                        </div>
+                        <div class="time-sep">:</div>
+                        <div class="time-block">
+                            <span id="counter-minutes" class="time-val">00</span>
+                            <span class="time-label">Minutes</span>
+                        </div>
+                        <div class="time-sep">:</div>
+                        <div class="time-block">
+                            <span id="counter-seconds" class="time-val">00</span>
+                            <span class="time-label">Seconds</span>
+                        </div>
+                    </div>
+                    <p class="counter-date-note">Since 29 July 2025, 5:00 PM IST</p>
+                </div>
+
+                <!-- Astronomy Section (Stacked Vertically) -->
+                <div class="astronomy-section-stacked">
+                    <!-- Moon Phase -->
+                    <div class="astro-card glass-card">
+                        <h3>Moon Phase on Our Anniversary</h3>
+                        <div class="moon-display">
+                            <div id="moon-graphic" class="moon-graphic" title="Moon Phase">
+                                <div id="moon-illumination" class="moon-illumination"></div>
+                            </div>
+                            <div class="moon-info">
+                                <span id="moon-phase-name" class="moon-phase-name">Calculating phase...</span>
+                                <span class="moon-date-note">July 29, 2025 · 17:00 IST</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2D Rotating Solar System -->
+                    <div class="astro-card glass-card">
+                        <h3>Planetary Positions (2D Solar System)</h3>
+                        <div class="solar-system-2d-container">
+                            <div id="solar-system" class="solar-system-2d">
+                                <div class="sun-2d">☀️</div>
+                                <!-- Orbits and 2D planets generated via JS -->
+                            </div>
+                        </div>
+                        <p class="solar-note">Astronomically grounded 2D approximate positions on July 29, 2025</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PICTORIAL MEMORIES ================= -->
+        <section id="section-memories" class="page-section">
+            <div class="section-header">
+                <button class="back-home-btn" data-target="home">← Back to Homepage</button>
+                <h2>Pictorial Memories</h2>
+                <p>Scrapbook of our precious moments together</p>
+            </div>
+
+            <div class="scrapbook-container" id="scrapbook-container">
+                <!-- Injected via JavaScript for all 10 images -->
+            </div>
+
+            <div class="section-footer">
+                <button class="glide-top-btn" data-target="home">
+                    <span class="up-arrow-icon">&uarr;</span> Unlock Next Section
+                </button>
+            </div>
+        </section>
+
+        <!-- ================= LA MUSIQUE ================= -->
+        <section id="section-music" class="page-section">
+            <div class="section-header">
+                <button class="back-home-btn" data-target="home">← Back to Homepage</button>
+                <h2>La Musique</h2>
+                <p>For My sole obsession 😝❤️</p>
+            </div>
+
+            <div class="music-content-wrapper">
+                <!-- Rotating CD 1 -->
+                <div class="cd-showcase">
+                    <div class="rotating-cd-container" id="cd-music">
+                        <div class="cd-disc">
+                            <div class="cd-grooves"></div>
+                            <div class="cd-label">
+                                <div class="cd-label-inner">
+                                    <span class="cd-brand">FATIMA 15</span>
+                                    <span class="cd-title">My Sole Obsession😝🌹</span>
+                                    <span class="cd-heart">❤️🏀</span>
+                                </div>
+                            </div>
+                            <div class="cd-hole"></div>
+                        </div>
+                        <div class="cd-tonearm"></div>
+                    </div>
+                    <div class="playlist-meta-card glass-card">
+                        <h3>For My sole obsession 😝❤️</h3>
+                        <p class="playlist-desc">For your special day, and more to come. Never lose hope meri jaan, never. Happy birthday🌹❤️</p>
+                        <a href="https://open.spotify.com/playlist/60Ov61rPPGNQMsbJuOyKyF?si=SAEY44ubQZ-tPz35c04qaw&utm_source=copy_link&pt=84449d0c548decc7355bfcd2448c754d" target="_blank" class="spotify-link-btn">
+                            <span>🟢</span> Open Spotify Playlist
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Song List -->
+                <div class="song-list-container glass-card">
+                    <h3>Birthday Playlist Songs</h3>
+                    <p class="song-list-hint">Click any song to open the Spotify playlist</p>
+                    <div class="songs-grid" id="songs-grid">
+                        <!-- Populated via JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-footer">
+                <button class="glide-top-btn" data-target="home">
+                    <span class="up-arrow-icon">&uarr;</span> Glide Back to Homepage & Unlock Next Section
+                </button>
+            </div>
+        </section>
+
+        <!-- ================= LETTER ================= -->
+        <section id="section-letter" class="page-section">
+            <div class="section-header">
+                <button class="back-home-btn" data-target="home">← Back to Homepage</button>
+                <h2>A Letter For You</h2>
+                <p>Read every word with your heart</p>
+            </div>
+
+            <div class="letter-container glass-card">
+                <div class="letter-paper">
+                    <div class="letter-text" id="letter-content">
+                        I don't know how to start this... Well I guess I'll start it with those words. Its your birthday, and I know while you are feeling happy or whatever you're feeling right now there's a tinge of sadness, old habits die hard don't they. This isn't the time to feel sad, bad. And I know you'll be like "I can't stop it" ok, ok, acceptable, how about we feel Less sad?
+                        Darling you're the single most amazing person I've ever met. You're smart, you're loved, you're bold, you're... You leave me speechless no matter what the context is. Whether its praising you, or talking about you, or simply thinking of you. You're humble, you're simple, you're complex, you're contradicting things and somehow it makes sense.
+                        God gives his toughest battles to his strongest soldiers. And darling you're Hercules (PLEASE don't think too much into the metaphor and start bringing up facts about hercules). And yes sometimes it feels like life is pushing you down a little too hard. What you gotta do is push back. You're 15 now, 15! You don't have to take everything at once, you have your whole life ahead of you with or without me.
+                        I never thought I'd be this deep into love, I've never been to this level. You'll either be my greatest treasure or my biggest heartbreak.
+                        One thing I'll highlight now that you're reading this, Stop believing everyone. If the bitch is spweing shit to your face ignore it. And I know its hard when she's scolding you the whole time but you have to stay strong and you have to learn how to ignore her words because if you keep taking them to your heart then it'll be a matter of time when you listen to your haters.
+                        Fatima. You are the best thing that has ever happened or will ever happen to me and I thank god for making us meet
+                        I love you and I want you to enjoy the rest of your birthday whether its with me or without me.
+                        Happy Birthday Meri Jaan
+
+                    </div>
+                    <div class="letter-signoff">
+                        <p>-Your Man</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-footer">
+                <button class="glide-top-btn" data-target="home">
+                    <span class="up-arrow-icon">&uarr;</span> Glide Back to Homepage & Unlock Next Section
+                </button>
+            </div>
+        </section>
+
+        <!-- ================= REVEAL ================= -->
+        <section id="section-reveal" class="page-section">
+            <div class="section-header">
+                <button class="back-home-btn" data-target="home">← Back to Homepage</button>
+                <h2>The Reveal</h2>
+                <p>Behind the melody</p>
+            </div>
+
+            <div class="reveal-content-wrapper">
+                <!-- Rotating CD 2 -->
+                <div class="cd-showcase">
+                    <div class="rotating-cd-container" id="cd-reveal">
+                        <div class="cd-disc reveal-disc">
+                            <div class="cd-grooves"></div>
+                            <div class="cd-label reveal-label">
+                                <div class="cd-label-inner">
+                                    <span class="cd-brand">COMPASS</span>
+                                    <span class="cd-title">Special Track</span>
+                                    <span class="cd-heart">✨🎶</span>
+                                </div>
+                            </div>
+                            <div class="cd-hole"></div>
+                        </div>
+                        <div class="cd-tonearm"></div>
+                    </div>
+                    <div class="song-title-display">
+                        <h3>You're My Compass</h3>
+                    </div>
+                </div>
+
+                <!-- Reveal Text -->
+                <div class="reveal-card glass-card">
+                    <div class="reveal-text" id="reveal-content">
+                        This Song you've been listening to since you opened the website
+                        was written and composed by yours truely :)
+                        Yup, My ahh couldn't autotune so I did the only thing that made sense
+                        Made AI sing it
+                        Now hear me out, The lyrics and musical elements were still made by me
+                        and I know I say how "AI made music ain't music" but, it ain't AI made
+                        What you're hearing is about 2 months of work plus a few tweaks.
+                        And all of it was written with you in mind Jaan <3
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-footer">
+                <button class="glide-top-btn" data-target="home">
+                    <span class="up-arrow-icon">&uarr;</span> Glide Back to Homepage & Unlock Final Surprise
+                </button>
+            </div>
+        </section>
+
+        <!-- ================= FINAL BIRTHDAY PAGE ================= -->
+        <section id="section-final" class="page-section">
+            <div class="final-page-content">
+                <div class="floating-basketball-bg">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png" alt="Basketball" style="width: 80px; height: 80px; animation: float-slow 3s ease-in-out infinite alternate;">
+                </div>
+                <h1 class="final-huge-message">Happy Birthday Meri Jaan</h1>
+                <div class="final-actions">
+                    <button class="nav-btn secondary-nav-btn" data-target="home">
+                        <span>🏠</span> Return to Homepage & Revisit Journey
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
